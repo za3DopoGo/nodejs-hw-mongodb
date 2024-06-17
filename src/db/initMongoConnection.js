@@ -4,9 +4,7 @@ import { env } from '../utils/env.js';
 export const initMongoConnection = async () => {
   const connectionLink = `mongodb+srv://${env('MONGODB_USER')}:${env(
     'MONGODB_PASSWORD',
-  )}@${env('MONGODB_URL')}/${env(
-    'MONGODB_DB',
-  )}?retryWrites=true&w=majority&appName=Cluster0`;
+  )}@${env('MONGODB_URL')}/?retryWrites=true&w=majority&appName=Cluster0`;
 
   try {
     await mongoose.connect(connectionLink);
